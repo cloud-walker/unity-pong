@@ -17,7 +17,7 @@ public class Goal : MonoBehaviour
 
         this.transform.localScale = new Vector2(width, 1);
 
-        this.transform.position = isNorth
+        this.transform.position = this.isNorth
             ? new Vector2(0, topRightCorner.y) + this.offset
             : new Vector2(0, bottomLeftCorner.y) - this.offset;
 

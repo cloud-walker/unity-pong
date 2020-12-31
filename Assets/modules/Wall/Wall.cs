@@ -17,7 +17,7 @@ public class Wall : MonoBehaviour
 
         this.transform.localScale = new Vector2(1, height);
 
-        this.transform.position = isWest
+        this.transform.position = this.isWest
             ? new Vector2(bottomLeftCorner.x, 0) - this.offset
             : new Vector2(topRightCorner.x, 0) + this.offset;
 
