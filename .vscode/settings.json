@@ -1,4 +1,4 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -37,6 +37,7 @@
         "**/*.obj":true,
         "**/*.OBJ":true,
         "**/*.asset":true,
+        "**/*.physicsMaterial2D":true,
         "**/*.cubemap":true,
         "**/*.flare":true,
         "**/*.mat":true,
