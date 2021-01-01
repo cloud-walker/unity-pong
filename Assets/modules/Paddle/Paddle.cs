@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Paddle : MonoBehaviour
@@ -10,6 +11,8 @@ public class Paddle : MonoBehaviour
     Vector2? lastMousePosition;
 
     Camera cam;
+
+    Rigidbody2D rb;
 
     void HandlePlayerMovement()
     {
@@ -24,7 +27,8 @@ public class Paddle : MonoBehaviour
 
             if (this.lastMousePosition != null)
             {
-                this.transform.position += new Vector3(mousePosition.x - (float)this.lastMousePosition?.x, 0f, 0f);
+                var delta = new Vector2(mousePosition.x - (float)this.lastMousePosition?.x, 0f);
+                this.rb.velocity += delta;
             }
 
             this.lastMousePosition = mousePosition;
@@ -37,6 +41,7 @@ public class Paddle : MonoBehaviour
 
     void Start()
     {
+        this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
         var bottomLeftCorner = (Vector2)this.cam.ScreenToWorldPoint(new Vector2(0, 0));
         var topRightCorner = (Vector2)this.cam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
